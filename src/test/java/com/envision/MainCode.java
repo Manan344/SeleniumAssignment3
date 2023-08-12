@@ -138,7 +138,6 @@ public class MainCode extends BaseCode{
 
         driver.findElement(By.xpath("//a[@href = '/web/index.php/auth/logout']")).click();
 
-
     }
 
     @AfterTest

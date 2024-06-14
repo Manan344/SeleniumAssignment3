@@ -1,0 +1,7 @@
+<suite name = "Selenium Assignment03 Automation Suite">
+    <test name = "MainCode.java test">
+        <classes>
+            <class name ="com.envision.MainCode"/>
+        </classes>
+    </test>
+</suite>

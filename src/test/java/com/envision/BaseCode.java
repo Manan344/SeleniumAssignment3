@@ -12,7 +12,7 @@ public class BaseCode {
 
     public void openBrowser(String browserName){
         if(browserName.equalsIgnoreCase("chrome")){
-            System.setProperty("webdriver.chrome.driver", "C:\\Users\\manan\\IdeaProjects\\SeleniumAssignment3\\src\\test\\resources\\chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "C:\\Users\\manan\\Automation Tools\\Drivers\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
             co = new ChromeOptions();
 //            co.addArguments("-headless=new");
             driver = new ChromeDriver(co);      //remove co

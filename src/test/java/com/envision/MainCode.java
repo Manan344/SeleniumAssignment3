@@ -25,12 +25,38 @@ public class MainCode extends BaseCode{
         openURL("https://opensource-demo.orangehrmlive.com/");
     }
 
-    @Test
+    //ignore this test,just for practice
+    @Test(priority = 1)
+    public void validLogin() throws InterruptedException {
+
+        pauseFor(2);
+
+        WebElement uName = driver.findElement(By.name("username"));
+        uName.sendKeys("Admin");
+
+        WebElement pwd = driver.findElement(By.name("password"));
+        pwd.sendKeys("admin123");
+
+        driver.findElement(By.xpath("//button[text()=' Login ']")).click();
+
+        pauseFor(2);
+
+        WebElement loginUser = driver.findElement(By.className("oxd-userdropdown-name"));
+        Assert.assertTrue(loginUser.isDisplayed(), "Login username doesnt match");
+
+
+        driver.findElement(By.className("oxd-userdropdown-name")).click();
+        pauseFor(2);
+
+        //Click on Logout
+        driver.findElement(By.xpath("//a[@href = '/web/index.php/auth/logout']")).click();
+    }
+    @Test(priority = 2)
      public void searchDirectoryScenario() throws InterruptedException {
 
         pauseFor(2);
 
-        WebElement uName = driver.findElement(By.name("username"));     //Enter username
+        WebElement uName = driver.findElement(By.name("username"));
         uName.sendKeys("Admin");
 
         WebElement pwd = driver.findElement(By.name("password"));       //Enter password
@@ -90,7 +116,7 @@ public class MainCode extends BaseCode{
 
     }
 
-    @Test
+    @Test(priority = 3)
     public void personalDetailsValidationScenario() throws InterruptedException {
 
         pauseFor(2);
@@ -139,6 +165,9 @@ public class MainCode extends BaseCode{
         driver.findElement(By.xpath("//a[@href = '/web/index.php/auth/logout']")).click();
 
     }
+
+
+
 
     @AfterTest
     public void endPoint(){

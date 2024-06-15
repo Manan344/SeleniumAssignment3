@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Selenium Assignment03 Automation Suite]">
+  <test name="MainCode.java test(failed)">
+    <classes>
+      <class name="com.envision.MainCode">
+        <methods>
+          <include name="endPoint"/>
+          <include name="searchDirectoryScenario"/>
+          <include name="personalDetailsValidationScenario"/>
+          <include name="startPoint"/>
+        </methods>
+      </class> <!-- com.envision.MainCode -->
+    </classes>
+  </test> <!-- MainCode.java test(failed) -->
+</suite> <!-- Failed suite [Selenium Assignment03 Automation Suite] -->

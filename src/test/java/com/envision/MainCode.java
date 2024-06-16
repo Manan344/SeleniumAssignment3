@@ -21,22 +21,21 @@ import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
 public class MainCode extends BaseCode{
-    static WebDriver driver;
     public ExtentReports extent;
     public static ExtentTest test;
     @BeforeTest
     public void startPoint(){
 
-        ExtentSparkReporter spark = new ExtentSparkReporter("/test-output/SeleniumAssignment03_Extent.html");
+        ExtentSparkReporter sparkReporter = new ExtentSparkReporter("test-output/Assignment03_ExtentReport.html");
+        sparkReporter.config().setDocumentTitle("Automation Test Report");
+        sparkReporter.config().setReportName("First Test Report with testng.xml");
 
-        //creating object for ExtentReports
-        ExtentReports extent = new ExtentReports();
-        extent.attachReporter(spark);
+        extent = new ExtentReports();
+        extent.attachReporter(sparkReporter);
 
-        //
-        extent.setSystemInfo("OS","Windows 10");
-        extent.setSystemInfo("Browser","chrome");
-
+        // Set system info
+        extent.setSystemInfo("OS", "Windows 10");
+        extent.setSystemInfo("Browser", "Chrome");
 
 
         openBrowser("chrome");
@@ -72,7 +71,7 @@ public class MainCode extends BaseCode{
         //Click on Logout
         driver.findElement(By.xpath("//a[@href = '/web/index.php/auth/logout']")).click();
     }
-    @Test(priority = 2)
+    @Test(priority = 3)
      public void searchDirectoryScenario() throws InterruptedException {
 
         pauseFor(2);
@@ -137,7 +136,7 @@ public class MainCode extends BaseCode{
 
     }
 
-    @Test(priority = 3)
+    @Test(priority = 2)
     public void personalDetailsValidationScenario() throws InterruptedException {
 
         pauseFor(2);

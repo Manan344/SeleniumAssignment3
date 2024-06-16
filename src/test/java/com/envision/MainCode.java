@@ -1,6 +1,9 @@
 package com.envision;
 
 //import javafx.scene.web.WebErrorEvent;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.*;
@@ -18,11 +21,29 @@ import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
 public class MainCode extends BaseCode{
-
+    static WebDriver driver;
+    public ExtentReports extent;
+    public static ExtentTest test;
     @BeforeTest
     public void startPoint(){
+
+        ExtentSparkReporter spark = new ExtentSparkReporter("/test-output/SeleniumAssignment03_Extent.html");
+
+        //creating object for ExtentReports
+        ExtentReports extent = new ExtentReports();
+        extent.attachReporter(spark);
+
+        //
+        extent.setSystemInfo("OS","Windows 10");
+        extent.setSystemInfo("Browser","chrome");
+
+
+
         openBrowser("chrome");
         openURL("https://opensource-demo.orangehrmlive.com/");
+
+        ExtentTest test = extent.createTest("Assignment02_Test_Cases", "Integrating Extent Report with GIT+Jenkins");
+
     }
 
     //ignore this test,just for practice
@@ -171,6 +192,7 @@ public class MainCode extends BaseCode{
 
     @AfterTest
     public void endPoint(){
+        extent.flush();
         quitBrowser();
     }
 }

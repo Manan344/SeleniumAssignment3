@@ -26,7 +26,7 @@ public class MainCode extends BaseCode{
     @BeforeTest
     public void startPoint(){
 
-        ExtentSparkReporter sparkReporter = new ExtentSparkReporter("test-output/Assignment03_ExtentReport.html");
+        ExtentSparkReporter sparkReporter = new ExtentSparkReporter("test-output/Assignment03_NewExtentReport.html");
         sparkReporter.config().setDocumentTitle("Automation Test Report");
         sparkReporter.config().setReportName("First Test Report with testng.xml");
 

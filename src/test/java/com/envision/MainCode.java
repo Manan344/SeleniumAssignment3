@@ -41,7 +41,7 @@ public class MainCode extends BaseCode{
         openBrowser("chrome");
         openURL("https://opensource-demo.orangehrmlive.com/");
 
-        ExtentTest test = extent.createTest("Assignment02_Test_Cases", "Integrating Extent Report with GIT+Jenkins");
+        ExtentTest test = extent.createTest("Assignment03_Test_Cases", "Integrating Extent Report with GIT+Jenkins");
 
     }
 
